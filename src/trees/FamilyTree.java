@@ -72,9 +72,11 @@ public class FamilyTree
             // the nodes of a tree is like traversing a linked list. If that isn’t clear,
             // draw a tree, mark any leaf node, and then mark its ancestors in order from
             // recent to ancient. Expect a question about this on the final exam.
-            for(TreeNode child : children)
+            TreeNode curr = this;
+            while(curr != null)
             {
-            	ancestors.add(child);
+            	ancestors.add(curr);
+            	curr = this.parent;
             }
             return ancestors;
         }
